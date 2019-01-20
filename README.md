@@ -22,12 +22,13 @@ String ip = await Wifi.ip;
 
 var result = await Wifi.connection('ssid', 'password');
 
-// only work on Android.
-List<WifiResult> list = await Wifi.list('key'); // this key is used to filter
+// Only works on Android.
+// 'key' is used to filter the list. Use empty string if the full wifi list is desired.
+List<WifiResult> list = await Wifi.list('key');
 ```
 When you use connection on iOS (iOS 11 only)
 
-1. 'build Phass' -> 'Link Binay With Libraries' add 'NetworkExtension.framework'
+1. 'build Phase' -> 'Link Binary With Libraries' add 'NetworkExtension.framework'
     ![NetworkExtension](https://github.com/once10301/wifi/blob/master/png/NetworkExtension.png)
 
 2. in 'Capabilities' open 'Hotspot Configuration'
